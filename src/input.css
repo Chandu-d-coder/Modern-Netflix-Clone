@@ -41,3 +41,6 @@
 .accordian input[type="radio"]:checked + label .fa-solid {
   transform: rotate(45deg); /* Rotates icon by 45 degrees */
 }
+.accordian label:hover {
+  background-color: #424141;
+}
