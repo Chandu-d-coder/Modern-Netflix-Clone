@@ -1,0 +1,43 @@
+/* Importing Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component styles */
+@layer components {
+  /* Hover effect to slightly enlarge images */
+  .img-div:hover {
+    @apply scale-105;
+  }
+
+  /* Custom gradient background for box elements */
+  .box {
+    background: linear-gradient(150deg, #1c1b36 0%, #210e17 100%);
+  }
+}
+
+/* Hide scrollbar for elements with the "middle" class */
+.middle::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth transition for accordion content expansion and padding */
+.content {
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+/* Smooth transition for icon rotation */
+.fa-solid {
+  transition: transform 0.3s;
+}
+
+/* Expands accordion content when the corresponding radio input is checked */
+.accordian input[type="radio"]:checked + label + .content {
+  max-height: 600px; /* Maximum height for expanded content */
+  padding: 10px; /* Adds padding to expanded content */
+}
+
+/* Rotates the icon when accordion content is expanded */
+.accordian input[type="radio"]:checked + label .fa-solid {
+  transform: rotate(45deg); /* Rotates icon by 45 degrees */
+}

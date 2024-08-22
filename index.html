@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata and linking external resources -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix India - Watch TV Shows Online, Watch Movies Online</title>
+
+    <!-- Favicon for the webpage -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+
+    <!-- Tailwind CSS CDN for utility-first CSS framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS file -->
+    <link href="/src/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Hero section with background image and overlay -->
+    <section class="w-[100%] h-[100vh] bg-[url('assets/img/Background.jpg')] bg-center bg-cover bg-[rgba(0,0,0.5)]">
+      <div class="w-[100%] h-[100vh] bg-[rgba(0,0,0,0.72)]">
+        <!-- Header section with logo and navigation -->
+        <header class="max-w-[1170px] mx-auto">
+          <div class="grid sm:grid-cols-2 grid-cols-[30%_auto] items-center">
+            <!-- Netflix logo -->
+            <figure>
+              <img src="assets/img/logo.png" class="w-[200px] cursor-pointer background" alt="logo" />
+            </figure>
+
+            <!-- Navigation: Language selector and Sign in button -->
+            <nav class="flex justify-end gap-4">
+              <!-- Language selector with icon -->
+              <div class="text-white border border-gray-500 flex justify-center items-center gap-2 rounded-[5px] p-[6px_15px] cursor-pointer">
+                <i class="fa-solid fa-globe"></i>
+                <select class="bg-black text-white border-none outline-none cursor-pointer font-semibold">
+                  <option value="English">English</option>
+                  <option value="Hindi">Hindi</option>
+                </select>
+              </div>
+
+              <!-- Sign in button -->
+              <button class="bg-[red] text-white rounded-[5px] px-[10px] font-semibold cursor-pointer">Sign in</button>
+            </nav>
+          </div>
+        </header>
+
+        <!-- Main promotional content with call-to-action form -->
+        <section class="max-w-[1170px] mx-auto sm:py-[250px] py-[50px] text-center text-white">
+          <!-- Promotional headline -->
+          <h1 class="sm:pb-[10px] text-[60px] font-bold">
+            Unlimited movies, TV <br />
+            shows and more
+          </h1>
+
+          <!-- Subheadline with pricing information -->
+          <h4 class="sm:pb-[12px] text-[20px] font-bold mb-4">Starts at ₹149. Cancel anytime.</h4>
+
+          <!-- Call-to-action prompt -->
+          <p class="sm:pb-[12px] text-[16px]">Ready to watch? Enter your email to create or restart your membership.</p>
+
+          <!-- Email input form -->
+          <form class="flex flex-row justify-center gap-2 mt-2">
+            <!-- Email input field -->
+            <input type="text" placeholder="Email address" class="p-4 w-[450px] bg-transparent border-gray-500 border rounded font-bold" outline-none />
+            <!-- Submit button -->
+            <button class="px-[35px] bg-[red] rounded text-[24px] font-bold">Get started <i class="fa-solid fa-chevron-right"></i></button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- Main content section for displaying trending content -->
+    <main class="pt-[25px] bg-black flex justify-center">
+      <section class="main-1 w-[1300px] text-white flex flex-col mx-auto;">
+        <!-- Section title -->
+        <h1 class="text-[32px] font-bold">Trending Now</h1>
+
+        <!-- Dropdowns for filtering content by region and type -->
+        <div class="top flex gap-[20px] mt-[20px] mb-[35px]">
+          <div>
+            <!-- Region filter dropdown -->
+            <label for="trending-region" class="sr-only">Select Region</label>
+            <select id="trending-region" class="bg-black text-white border px-3 py-2 border-gray-500 rounded outline-none cursor-pointer font-semibold">
+              <option value="Indian">Indian</option>
+              <option value="Global">Global</option>
+            </select>
+          </div>
+
+          <div>
+            <!-- Type filter dropdown -->
+            <label for="trending-type" class="sr-only">Select Type</label>
+            <select id="trending-type" class="bg-black text-white border p-2 border-gray-500 rounded outline-none cursor-pointer font-semibold">
+              <option value="Movies">Movies</option>
+              <option value="TV Shows">TV Shows</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Gallery section with horizontal image slider and navigation buttons -->
+        <section class="gallery-wrap flex items-center justify-center">
+          <!-- Left navigation button for sliding images to the left -->
+          <button class="px-[8px] mr-[35px] h-[125px] rounded-lg bg-[#ffffff2f] flex items-center" id="leftBtn">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+
+          <!-- Container for the image slider -->
+          <div class="middle m-auto flex mb-[35px] overflow-x-scroll">
+            <!-- First set of images in the slider -->
+            <div class="image-slider w-full grid grid-cols-5 flex-none">
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-1.webp" class="rounded-lg" alt="Movie 1" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-2.webp" class="rounded-lg" alt="Movie 2" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-3.webp" class="rounded-lg" alt="Movie 3" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-4.webp" class="rounded-lg" alt="Movie 4" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-5.webp" class="rounded-lg" alt="Movie 5" />
+              </figure>
+            </div>
+
+            <!-- Second set of images in the slider -->
+            <div class="w-full grid grid-cols-5 flex-none">
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-6.webp" class="rounded-lg" alt="Movie 6" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-7.webp" class="rounded-lg" alt="Movie 7" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-8.webp" class="rounded-lg" alt="Movie 8" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-9.webp" class="rounded-lg" alt="Movie 9" />
+              </figure>
+              <figure class="img-div p-[10px] cursor-pointer transition-transform duration-200 ease-in">
+                <img src="/assets/img/movie-10.webp" class="rounded-lg" alt="Movie 10" />
+              </figure>
+            </div>
+          </div>
+
+          <!-- Right navigation button for sliding images to the right -->
+          <button class="px-[8px] ml-[35px] h-[125px] rounded-lg bg-[#ffffff2f] flex items-center" id="rightBtn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </section>
+
+        <!-- Section showcasing additional membership benefits -->
+        <section class="bottom">
+          <!-- Header for the section -->
+          <header>
+            <h1 class="text-[30px] font-bold">More reasons to join</h1>
+          </header>
+
+          <!-- Flex container for benefit boxes -->
+          <div class="my-[20px] flex justify-between">
+            <!-- Benefit box: Enjoy on your TV -->
+            <article class="box bg-[red] w-[300px] h-[340px] rounded-[18px] p-6 relative">
+              <h2 class="py-[15px] text-[22px] font-bold">Enjoy on your TV</h2>
+              <p class="text-[15px] mt-[10px] text-[#ffffffb7]">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+              <img src="/assets/img/tv.png" class="absolute right-6 bottom-6" alt="TV" />
+            </article>
+
+            <!-- Benefit box: Download your shows to watch offline -->
+            <article class="box bg-[red] w-[300px] h-[340px] rounded-[18px] p-6 relative">
+              <h2 class="py-[15px] text-[22px] font-bold">Download your shows to watch offline</h2>
+              <p class="text-[15px] mt-[10px] text-[#ffffffb7]">Save your favourites easily and always have something to watch.</p>
+              <img src="/assets/img/download.png" class="absolute right-6 bottom-5" alt="Download" />
+            </article>
+
+            <!-- Benefit box: Watch everywhere -->
+            <article class="box bg-[red] w-[300px] h-[340px] rounded-[18px] p-6 relative">
+              <h2 class="py-[15px] text-[22px] font-bold">Watch everywhere</h2>
+              <p class="text-[15px] mt-[10px] text-[#ffffffb7]">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+              <img src="/assets/img/torch.png" class="absolute right-6 bottom-6" alt="Devices" />
+            </article>
+
+            <!-- Benefit box: Create profiles for kids -->
+            <article class="box bg-[red] w-[300px] h-[340px] rounded-[18px] p-6 relative">
+              <h2 class="py-[15px] text-[22px] font-bold">Create profiles for kids</h2>
+              <p class="text-[15px] mt-[10px] text-[#ffffffb7]">Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+              <img src="/assets/img/smily.png" class="absolute right-6 bottom-6" alt="Kids Profile" />
+            </article>
+          </div>
+        </section>
+
+        <!-- FAQ section -->
+        <section class="faq mt-10 w-[1000px]">
+          <!-- Header for the FAQ section -->
+          <header>
+            <h1 class="text-[30px] font-bold">Frequently Asked Questions</h1>
+          </header>
+
+          <!-- Container for FAQ items -->
+          <div class="mt-4 flex flex-col">
+            <!-- Accordion container to display FAQ items -->
+            <ul class="accordian max-w-full">
+              <!-- First FAQ item -->
+              <li class="w-full mb-1">
+                <!-- Hidden radio input to control accordion behavior -->
+                <input type="radio" name="accordian" id="first" class="hidden" />
+                <!-- Label that triggers the accordion to open/close -->
+                <label for="first" class="flex items-center p-[25px] bg-[#2D2D2D] text-[23px] font-medium cursor-pointer relative">
+                  What is Netflix?
+                  <!-- Plus icon to indicate collapsible content -->
+                  <i class="fa-solid fa-plus absolute right-[20px]"></i>
+                </label>
+                <!-- Content that expands/collapses when the label is clicked -->
+                <div class="content max-h-0 overflow-hidden bg-[#2D2D2D] border-black border-t-2">
+                  <p class="text-[25px] p-[15px]">
+                    Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
+                    <br /><br />
+                    You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!
+                  </p>
+                </div>
+              </li>
+
+              <!-- Second FAQ item -->
+              <li class="w-full mb-1">
+                <input type="radio" name="accordian" id="second" class="hidden" />
+                <label for="second" class="flex items-center p-[25px] bg-[#2D2D2D] text-[23px] font-medium cursor-pointer relative">
+                  How much does Netflix cost?
+                  <i class="fa-solid fa-plus absolute right-[20px]"></i>
+                </label>
+                <div class="content max-h-0 overflow-hidden bg-[#2D2D2D] border-black border-t-2">
+                  <p class="text-[25px] p-[15px]">
+                    Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Third FAQ item -->
+              <li class="w-full mb-1">
+                <input type="radio" name="accordian" id="third" class="hidden" />
+                <label for="third" class="flex items-center p-[25px] bg-[#2D2D2D] text-[23px] font-medium cursor-pointer relative">
+                  Where can I watch?
+                  <i class="fa-solid fa-plus absolute right-[20px]"></i>
+                </label>
+                <div class="content max-h-0 overflow-hidden bg-[#2D2D2D] border-black border-t-2">
+                  <p class="text-[25px] p-[15px]">
+                    Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app,
+                    including smart TVs, smartphones, tablets, streaming media players and game consoles.
+                    <br /><br />
+                    You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Fourth FAQ item -->
+              <li class="w-full mb-1">
+                <input type="radio" name="accordian" id="fourth" class="hidden" />
+                <label for="fourth" class="flex items-center p-[25px] bg-[#2D2D2D] text-[23px] font-medium cursor-pointer relative">
+                  How do I cancel?
+                  <i class="fa-solid fa-plus absolute right-[20px]"></i>
+                </label>
+                <div class="content max-h-0 overflow-hidden bg-[#2D2D2D] border-black border-t-2">
+                  <p class="text-[25px] p-[15px]">
+                    Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Fifth FAQ item -->
+              <li class="w-full mb-1">
+                <input type="radio" name="accordian" id="fifth" class="hidden" />
+                <label for="fifth" class="flex items-center p-[25px] bg-[#2D2D2D] text-[23px] font-medium cursor-pointer relative">
+                  What can I watch on Netflix?
+                  <i class="fa-solid fa-plus absolute right-[20px]"></i>
+                </label>
+                <div class="content max-h-0 overflow-hidden bg-[#2D2D2D] border-black border-t-2">
+                  <p class="text-[25px] p-[15px]">
+                    Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Sixth FAQ item -->
+              <li class="w-full mb-1">
+                <input type="radio" name="accordian" id="sixth" class="hidden" />
+                <label for="sixth" class="flex items-center p-[25px] bg-[#2D2D2D] text-[23px] font-medium cursor-pointer relative">
+                  Is Netflix good for kids?
+                  <i class="fa-solid fa-plus absolute right-[20px]"></i>
+                </label>
+                <div class="content max-h-0 overflow-hidden bg-[#2D2D2D] border-black border-t-2 transition-all">
+                  <p class="text-[25px] p-[15px]">
+                    The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.
+                    <br /><br />
+                    Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Footer section -->
+        <footer class="mt-[65px]">
+          <!-- Call-to-Action section: Email input for membership -->
+          <section class="cta">
+            <p class="mb-4 ml-2">Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="flex items-center gap-4">
+              <input type="email" name="Email address" placeholder="Email address" class="w-[780px] bg-transparent border border-[#ffffff69] py-4 px-3 rounded-md font-bold" />
+              <div class="bg-[red] px-12 py-[10px] rounded-md text-white">
+                <button class="text-[25px] cursor-pointer">Get started</button>
+                <i class="fa-solid fa-angle-right"></i>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact and information links section -->
+          <section class="contact mt-8 text-[#b3b3b3] text-[17px]">
+            <div class="flex gap-[65px] flex-col">
+              <p>Questions? Call <a href="#" class="underline font-bold"> 000-800-919-1694 </a></p>
+              <nav class="grid grid-cols-4 ml-12 w-[1100px] gap-3 font-bold">
+                <!-- Navigation links -->
+                <a href="#">FAQ</a>
+                <a href="#">Help Center</a>
+                <a href="#">Account</a>
+                <a href="#">Media Center</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Jobs</a>
+                <a href="#">Ways to Watch</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookie Preferences</a>
+                <a href="#">Corporate Information</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Speed Test</a>
+                <a href="#">Legal Notices</a>
+                <a href="#">Only on Netflix</a>
+              </nav>
+            </div>
+          </section>
+
+          <!-- Language selector section -->
+          <section class="mt-12 mb-[50px] ml-10">
+            <select class="bg-black text-white border border-[#ffffff6b] px-3 py-[10px] rounded">
+              <option value="English">English</option>
+              <option value="Hindi">Hindi</option>
+            </select>
+          </section>
+
+          <!-- Footer branding -->
+          <article class="mb-[100px] ml-10">
+            <h2 class="text-[#ffffff96] font-bold">Netflix India</h2>
+          </article>
+        </footer>
+      </section>
+    </main>
+
+    <!-- Link to external JavaScript file for additional functionality -->
+    <script src="script.js"></script>
+  </body>
+</html>
