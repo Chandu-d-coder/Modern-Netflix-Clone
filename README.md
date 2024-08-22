@@ -17,7 +17,23 @@ This project is a modern Netflix clone developed using HTML, Tailwind CSS, and m
 ## Usage
 This project serves as a demo for showcasing web design and development skills. It can be further customized or extended to include additional features such as user authentication, a dynamic content feed, or integration with APIs for a more interactive experience.
 
+## Installation
+
+1. Clone the project
+
+```bash
+  git clone https://github.com/Chandu-d-coder/Modern-Netflix-Clone.git
+```
+
+2. Navigate to the project directory
+
+```bash
+  cd Modern-Netflix-Clone
+```
+3. Open `index.html` in your preferred web browser to view the project.
+
 ## Project Screenshots
+
 
 ![Homepage](https://github.com/user-attachments/assets/76ccd223-5160-45c6-be4c-7898a195d9b5)
 
